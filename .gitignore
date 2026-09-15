@@ -1,2 +1,6 @@
 build
 anji
+
+## clangd
+compile_commands.json
+.cache
