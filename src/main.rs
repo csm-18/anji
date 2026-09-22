@@ -1,5 +1,6 @@
+mod cli;
 mod host;
 
 fn main() {
-    dbg!(host::args());
+    cli::run(host::args());
 }
