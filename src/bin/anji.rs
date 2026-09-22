@@ -2,5 +2,6 @@ use anji::cli;
 use anji::host;
 
 fn main() {
-    cli::run(host::args());
+    let mut args = host::args();
+    cli::run(&mut args);
 }
