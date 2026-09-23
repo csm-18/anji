@@ -1,6 +1,7 @@
 use crate::host;
 mod arg_parser;
 use arg_parser::parse;
+mod response_file_parser;
 
 /// Parses and executes command-line arguments.
 pub fn run(args: &mut Vec<String>) {
