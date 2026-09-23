@@ -1,4 +1,4 @@
-use crate::diagnostics::create_diagnostic;
+use crate::host;
 
 /// Parses command-line arguments.
 pub fn parse(args: &mut Vec<String>) {
@@ -7,7 +7,15 @@ pub fn parse(args: &mut Vec<String>) {
     //  filenames
     //  normal_options
     //  watch_options
-    if let Some(error) = create_diagnostic(5083, &["hello.txt"]) {
-        error.print();
+
+    match host::read_file("hello.txt") {
+        Ok(bytes) => {
+            dbg!(bytes);
+        }
+        Err(error) => {
+            if let Some(err) = error {
+                err.print();
+            }
+        }
     }
 }
